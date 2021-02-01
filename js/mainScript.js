@@ -46,7 +46,9 @@ function paintRect() {
         ctx.strokeRect(startX, startY, width, height);
     } else {
         ctx.fillStyle = fill;
+        ctx.strokeStyle = color;
         ctx.fillRect(startX, startY, width, height);
+        ctx.strokeRect(startX, startY, width, height);
     }
 }
 
