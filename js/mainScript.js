@@ -78,7 +78,7 @@ function clear() {
 function setRealSize() {
     let canvas = $("#root-canvas");
     canvas.attr("width", window.innerWidth);
-    canvas.attr("height", (window.innerHeight - document.getElementById("header").offsetHeight) - 10);
+    canvas.attr("height", (window.innerHeight - document.getElementById("header").offsetHeight) - (window.innerHeight/100));
 }
 
 $(document).ready(() => {
