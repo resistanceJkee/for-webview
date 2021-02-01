@@ -3,22 +3,21 @@ let fill = "no";
 let color = "blue";
 
 function getFirstPosition(e) {
+    let zoomValue = window.getComputedStyle(document.getElementById("root-canvas")).zoom;
     if (e.type === "mousedown") {
-        let zoomValue = window.getComputedStyle(document.getElementById("root-canvas")).zoom;
         startX = e.pageX / zoomValue - e.target.offsetLeft;
         startY = e.pageY / zoomValue - e.target.offsetTop;
     } else {
         let touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
         startX = touch.clientX - $(e.target).offset().left;
         startY = touch.clientY - $(e.target).offset().top;
-        console.log(startX, startY);
     }
 
 }
 
 function getSecondPosition(e) {
+    let zoomValue = window.getComputedStyle(document.getElementById("root-canvas")).zoom;
     if (e.type === "mouseup") {
-        let zoomValue = window.getComputedStyle(document.getElementById("root-canvas")).zoom;
         endX = e.pageX / zoomValue - e.target.offsetLeft;
         endY = e.pageY / zoomValue - e.target.offsetTop;
     } else {
